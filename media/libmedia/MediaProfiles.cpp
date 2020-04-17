@@ -514,8 +514,7 @@ MediaProfiles::startElementHandler(void *userData, const char *name, const char 
         profiles->mCurrentCameraId = getCameraId(atts);
         profiles->addStartTimeOffset(profiles->mCurrentCameraId, atts);
     } else if (strcmp("EncoderProfile", name) == 0) {
-      MediaProfiles::CamcorderProfile* profile = createCamcorderProfile(
-          profiles->mCurrentCameraId, atts, profiles->mCameraIds);
+      MediaProfiles::CamcorderProfile* profile = createCamcorderProfile(profiles->mCurrentCameraId, atts, profiles->mCameraIds);
       if (profile != nullptr) {
         profiles->mCamcorderProfiles.add(profile);
       }
